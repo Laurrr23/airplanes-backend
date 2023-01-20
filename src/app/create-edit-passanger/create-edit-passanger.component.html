@@ -1,0 +1,30 @@
+
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{existingPassanger ? 'Passanger update' : 'Create passanger'}}</h4>
+    <button type="button" class="btn-close" (click)="dissmisModal()" aria-label="Close"></button>
+</div>
+<form [formGroup]="createUpdatePassangerGroup" (submit)="onSubbmit()">
+<div class="modal-body">
+    
+  <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Email</label>
+      <input formControlName="emailControl" type="text" class="form-control" id="exampleFormControlInput1">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Full Name</label>
+      <input formControlName="fullNameControl" type="text" class="form-control" id="exampleFormControlInput1">
+    </div>
+
+    <select class="form-select" formControlName ='planeIdControl'>
+        <option value = ' '>Chose a flight</option>
+        <option *ngFor="let plane of allPlanes" [value]="plane.id">{{plane.departure}}</option>
+  
+      </select>
+      
+</div>
+<div class="modal-footer">
+<button type="submit" class="btn btn-danger" >Submit</button>
+
+</div>
+</form>

@@ -1,0 +1,36 @@
+
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{existingPlane ? 'Plane update' : 'Create airplane'}}</h4>
+    <button type="button" class="btn-close" (click)="dissmisModal()" aria-label="Close"></button>
+</div>
+<form [formGroup]="createAndUpdateAirplaneGroup" (submit)="onSubbmit()">
+<div class="modal-body">
+    
+  <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Departure</label>
+      <input formControlName="departureControl" type="text" class="form-control" id="exampleFormControlInput1">
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Destination</label>
+        <input formControlName="destinationControl" type="text" class="form-control" id="exampleFormControlInput2">
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Number of seats</label>
+        <input formControlName="noOfSeatsControl" type="number" class="form-control" id="exampleFormControlInput3">
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Ticket price</label>
+        <input formControlName="priceControl" type="number" class="form-control" id="exampleFormControlInput3">
+      </div>
+      
+   
+      
+</div>
+<div class="modal-footer">
+<button type="submit" class="btn btn-danger" >Submit</button>
+
+</div>
+</form>

@@ -1,0 +1,41 @@
+<!-- <h1 class="text center">Employee List</h1>
+
+<button type="button" class="btn btn-outline-success rounded-circle" (click)="openCreateModal()">†</button> -->
+
+<h1 class="text-center mt-3 mb-3">Airplanes</h1>
+<button type="button" class="btn btn-outline-success" (click)="openCreateModal()">✍️</button>
+
+
+<table class="table" *ngIf="allPlanes.length > 0">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Departure</th>
+        <th scope="col">Destination</th>
+        <th scope="col">Number of seats</th>
+        <th scope="col">Ticket Price</th>
+
+
+        <th scope="col">Actions</th>
+
+      </tr>
+    </thead>
+    <tbody>
+     <tr *ngFor="let plane of allPlanes; let index = index">
+        <th scope="row">{{index +1}}</th>
+        <td >{{plane.departure}}</td>
+        <td >{{plane.destination}}</td>
+        <td >{{plane.noOfSeats}}</td>
+        <td >{{plane.price | currency: 'GBP'}}</td>
+
+
+        <td> <button type="button" class="btn btn-outline-danger" (click)="onRemove(plane.id)">💩</button>
+          <button type="button" class="btn btn-outline-warning" (click)="onEdit(plane)">🤝</button>
+        </td>
+        
+    </tr>
+    </tbody>
+  </table>
+
+
+  <p  class="text-center mt-3" *ngIf="allPlanes.length === 0"> There is no data yet</p>
